@@ -1,5 +1,6 @@
 from django.urls import path, include
+from . import views
 
 urlpatterns = [
-    path('', include('pages.urls')),
+    path('', views.home, name='home'),
 ]
