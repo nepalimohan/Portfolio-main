@@ -1,5 +1,5 @@
 from django.db import models
-
+from multiselectfield import MultiSelectField
 # Create your models here.
 
 work_choices = (
@@ -16,9 +16,9 @@ freelance_choices = (
 class Profile(models.Model):
     name = models.CharField(max_length=100)
     dob = models.CharField(max_length=100)
-    works_as = models.CharField(choices=work_choices, max_length=50)
-    age = models.PositiveBigIntegerField()
-    phone = models.IntegerField()
+    works_as = MultiSelectField(choices=work_choices, max_length=50)
+    age = models.IntegerField()
+    phone = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     address = models.CharField(max_length=100)
     freelance = models.CharField(choices=freelance_choices, max_length=50)
