@@ -45,6 +45,8 @@ class Education(models.Model):
     
 class Experience(models.Model):
     post = models.CharField(max_length=100)
+    name_of_organization = models.CharField(max_length=100)
+    time_period = models.PositiveIntegerField()
     address = models.CharField(max_length=100, blank=True)
     responsibilities = models.TextField()
     
