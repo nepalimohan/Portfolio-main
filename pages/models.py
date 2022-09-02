@@ -53,3 +53,16 @@ class Experience(models.Model):
     def __str__(self):
         return self.post
     
+class FrontEndSkill(models.Model):
+    name = models.CharField(max_length=50)
+    knowledge = models.PositiveIntegerField(default=0)
+    
+    def __str__(self):
+        return self.name
+    
+class BackEndSkill(models.Model):
+    name = models.CharField(max_length=50)
+    knowledge = models.PositiveIntegerField(default=0)
+    
+    def __str__(self):
+        return self.name

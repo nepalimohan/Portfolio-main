@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Education, Experience
+from .models import Profile, Education, Experience, FrontEndSkill, BackEndSkill
 
 # Register your models here.
 @admin.register(Profile)
@@ -15,3 +15,11 @@ class EducationAdmin(admin.ModelAdmin):
 @admin.register(Experience)
 class ExperienceAdmin(admin.ModelAdmin):
     list_display = ['id', 'post', 'address']
+    
+@admin.register(FrontEndSkill)
+class FrontEndSkillAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'knowledge'] 
+    
+@admin.register(BackEndSkill)
+class BackEndSkillAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'knowledge'] 
