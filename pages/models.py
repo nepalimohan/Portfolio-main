@@ -35,8 +35,8 @@ class Profile(models.Model):
     
 class Education(models.Model):
     course_name = models.CharField(max_length=100)
-    duration_from = models.DateField()
-    duration_to = models.DateField()
+    duration_from = models.PositiveIntegerField(blank=True, null=True)
+    duration_to = models.PositiveIntegerField(blank=True, null=True)
     name_of_institute = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
     
@@ -48,7 +48,7 @@ class Experience(models.Model):
     name_of_organization = models.CharField(max_length=100)
     time_period = models.PositiveIntegerField()
     address = models.CharField(max_length=100, blank=True)
-    responsibilities = models.TextField()
+    responsibilities = models.TextField(blank=True, null=True)
     
     def __str__(self):
         return self.post
