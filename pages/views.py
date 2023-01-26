@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def home(request):
-    profile =  Profile.objects.all()
+    profile =  Profile.objects.all().last()
     education = Education.objects.all()
     experience = Experience.objects.all()
     front_skills = FrontEndSkill.objects.all()
