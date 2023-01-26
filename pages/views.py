@@ -28,8 +28,8 @@ def contact(request):
         subject =  request.POST['subject']
         message =  request.POST['message']
 
-    admin_info = User.objects.get(is_superuser= True)
-    admin_email = admin_info.email
+    # admin_info = 'User.objects.get(is_superuser= True)'
+    admin_email = 'nepalimohan@outlook.com'
 
     send_mail(
         'You have received message from ' + name + ' whose email is ' + email + ' regarding ' + subject,
