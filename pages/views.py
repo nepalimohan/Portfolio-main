@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Education, Experience, Profile, FrontEndSkill, BackEndSkill
+from .models import (Education, Experience, Profile, FrontEndSkill, 
+                     BackEndSkill, Project)
 from django.core.mail import send_mail
 from django.contrib.auth.models import User
 
@@ -10,7 +11,7 @@ def home(request):
     experience = Experience.objects.all()
     front_skills = FrontEndSkill.objects.all()
     back_skills = BackEndSkill.objects.all()
-    
+    project = Project.objects.all().order_by('id')
     
     data = {
         'profile': profile,
@@ -18,6 +19,7 @@ def home(request):
         'experience': experience,
         'front_skills': front_skills,
         'back_skills' : back_skills,
+        'project' : project,
     }
     return render(request, 'pages/home.html', data)
 
